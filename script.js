@@ -49,7 +49,6 @@ navigator.geolocation.getCurrentPosition(currentIpLocation, errorCallback);
 
 // Content Update by Parameters
 getWeatherDataContent = (countyName, City, img, temp, humidity, text, browserLocation) => {
-    console.log(browserLocation);
     let content = `
     <div class="location"> ${browserLocation ? 'Current location: ' : 'Location: '} ${countyName + ', ' + City}</div>
     <div class="temperature">
