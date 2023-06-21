@@ -10,7 +10,10 @@ async function getWeatherData(cityName) {
         const response = await fetch(apiUrl);
         
         if (response.ok) {
-            // const data = await response.json();
+             const data = await response.json();
+
+                console.log(data);
+
             getWeatherDataContent(data.location.country, data.location.name, data.current.condition.icon, data.current.temp_c, data.current.humidity, data.current.condition.text, false);
         } else {
             let text = `
@@ -71,5 +74,6 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     //const data = new FormData(form);
     let cityName = search.value
+    console.log(cityName);
     getWeatherData(cityName)
 })
