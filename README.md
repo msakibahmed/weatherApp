@@ -7,10 +7,19 @@ The Weather Web App is a simple web application that provides real-time weather 
 
 <h2>Weather Web App Screenshot:</h2>
 <br>
-<img src="https://raw.githubusercontent.com/msakibahmed/weatherApp/main/weatherApp%20Image.png" height="400px" />
-
+<img src="https://raw.githubusercontent.com/msakibahmed/weatherApp/main/weatherApp%20Image.png" height="300px" />
 <br>
-    <h2>Technologies Used</h2>
+<h2>Features:</h2>
+    <ul>
+        <li>Display current weather conditions including temperature, humidity, and weather icon.</li>
+        <li>Support for searching weather by city name.</li>
+        <li>Display current location temperature.</li>
+        <li>Can be searched by location temperature.</li>
+        <li>Responsive design for optimal viewing on different devices.</li>
+    </ul>
+    
+<br>
+    <h2>Technologies Used:</h2>
     <ul>
         <li>JavaScript</li>
         <li>HTML5</li>
