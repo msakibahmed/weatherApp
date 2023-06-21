@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <title>Weather APP</title>
+    <title>Weather</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Font Awsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
+
     <!-- Custom Style -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,12 +23,17 @@
         <h2 class="heading">Weather APP</h2>
         <form>
             <input type="text" placeholder="Enter your location" id="weatherSearch">
-            <button  type="submit">
+            <button type="submit">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
             </button>
         </form>
-        <!-- Show content -->
+        <!-- Show Content -->
         <div id="tempSection"></div>
+
+        <!-- Show Next 5 Days Content  -->
+        <div class="future-temp" id="futureTemp">
+
+        </div>
     </div>
 
     <script src="script.js"></script>
