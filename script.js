@@ -8,12 +8,9 @@ async function getWeatherData(cityName) {
     try {
         const apiUrl = `//api.weatherapi.com/v1/current.json?key=${apiKey}&q=${cityName}&aqi=no`;
         const response = await fetch(apiUrl);
-        
+
         if (response.ok) {
-             const data = await response.json();
-
-                console.log(data);
-
+            const data = await response.json();
             getWeatherDataContent(data.location.country, data.location.name, data.current.condition.icon, data.current.temp_c, data.current.humidity, data.current.condition.text, false);
         } else {
             let text = `
@@ -30,7 +27,7 @@ async function getWeatherData(cityName) {
 
 // Current Location using XMLHttp Request
 const currentIpLocation = (position) => {
-    const latLong = position.coords.latitude+','+position.coords.longitude
+    const latLong = position.coords.latitude + ',' + position.coords.longitude
     const apiUrl = `//api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latLong}&aqi=no`
 
     const Http = new XMLHttpRequest();
@@ -40,21 +37,21 @@ const currentIpLocation = (position) => {
         if (Http.readyState === 4 && Http.status === 200) {
             const data = JSON.parse(Http.responseText);
             let browserLocation = true;
-            getWeatherDataContent(data.location.country,data.location.name,data.current.condition.icon,data.current.temp_c,data.current.humidity,data.current.condition.text,browserLocation)
+            getWeatherDataContent(data.location.country, data.location.name, data.current.condition.icon, data.current.temp_c, data.current.humidity, data.current.condition.text, browserLocation)
         }
     }
 };
 const errorCallback = (error) => {
     console.log(error);
 };
-navigator.geolocation.getCurrentPosition(currentIpLocation, errorCallback); 
+navigator.geolocation.getCurrentPosition(currentIpLocation, errorCallback);
 
 
 // Content Update by Parameters
-getWeatherDataContent = (countyName,City,img,temp,humidity,text,browserLocation) =>{
+getWeatherDataContent = (countyName, City, img, temp, humidity, text, browserLocation) => {
     console.log(browserLocation);
     let content = `
-    <div class="location"> ${browserLocation ? 'Current location: ' : 'Location: '} ${countyName +', '+ City}</div>
+    <div class="location"> ${browserLocation ? 'Current location: ' : 'Location: '} ${countyName + ', ' + City}</div>
     <div class="temperature">
         <img src="${img}" alt="weather-icon">
         <span>${temp}°</span>
@@ -72,8 +69,6 @@ getWeatherDataContent = (countyName,City,img,temp,humidity,text,browserLocation)
 // Form Handling by Submit Event
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-    //const data = new FormData(form);
     let cityName = search.value
-    console.log(cityName);
     getWeatherData(cityName)
 })
