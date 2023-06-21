@@ -12,6 +12,7 @@ The Weather Web App is a simple web application that provides real-time weather 
 <br>
     <h2>Technologies Used</h2>
     <ul>
+        <li>JavaScript</li>
         <li>HTML5</li>
         <li>CSS3</li>
         <li>Bootstrap 4</li>
